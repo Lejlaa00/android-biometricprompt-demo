@@ -33,7 +33,7 @@ Android BiometricPrompt API je na voljo pod licenco [Apache License 2.0](https:/
 Licenca Apache 2.0 omogoča:
 - prosto uporabo tehnologije za osebne, izobraževalne in komercialne namene
 - spreminjanje in prilagajanje kode brez posebnih omejitev
-- distribucijo programske opreme ob upoštevanju pogojev licence 
+- distribucijo programske opreme ob upoštevanju pogojev licence
 
 
 ## Število uporabnikov
