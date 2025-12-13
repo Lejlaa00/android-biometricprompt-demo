@@ -1,8 +1,6 @@
 # Android BiometricPrompt
 
----
-
-## Zakaj Android BiometricPrompt API?
+## 📍Zakaj Android BiometricPrompt API?
 
 Android BiometricPrompt API je uradna Android knjižnica, ki omogoča varno in enostavno biometrično avtentikacijo uporabnikov. Uporablja lahko prstni odtis, prepoznavo obraza ali druge biometrične metode, ki jih podpira naprava. Ker je del Android SDK-ja, gre za priporočeno in zanesljivo rešitev s strani podjetja Google.
 
@@ -11,7 +9,7 @@ Tehnologija je bila izbrana predvsem zaradi dobre kombinacije varnosti in uporab
 Biometrična avtentikacija je danes zelo razširjena in se pogosto uporablja v aplikacijah, kjer je varnost še posebej pomembna, na primer v bančnih, zdravstvenih ali varnostnih aplikacijah. Zaradi tega je Android BiometricPrompt API primerna izbira tudi za aplikacijo SafeWalk, kjer je cilj zaščita uporabnika in zanesljiva potrditev njegove identitete.
 
 
-## Prednosti
+## 🟢 Prednosti
 
 - omogoča visoko raven varnosti brez uporabe gesel ali PIN-kod
 - uporabniku prijazen način avtentikacije (hiter in enostaven)
@@ -19,14 +17,14 @@ Biometrična avtentikacija je danes zelo razširjena in se pogosto uporablja v a
 - podpira različne vrste biometrije (prstni odtis, prepoznava obraza, ipd.)
 - aplikacija ne shranjuje biometričnih podatkov, kar poveča varnost
 
-## Slabosti
+## 🔴 Slabosti
 
 - zahteva napravo z vgrajenim biometričnim senzorjem
 - ni podprt na zelo starih Android napravah
 - delovanje je odvisno od kakovosti strojne opreme naprave
 
 
-## Licenca
+## 📎 Licenca
 
 Android BiometricPrompt API je na voljo pod licenco [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -36,12 +34,12 @@ Licenca Apache 2.0 omogoča:
 - distribucijo programske opreme ob upoštevanju pogojev licence
 
 
-## Število uporabnikov
+## 👥 Število uporabnikov
 
 Android BiometricPrompt API je na voljo na večini sodobnih Android naprav, ki podpirajo biometrično avtentikacijo (npr. prstni odtis ali prepoznavo obraza). Ker Android uporablja več milijard uporabnikov po vsem svetu, je ta tehnologija potencialno dostopna zelo širokemu krogu uporabnikov.
 
 
-## Časovna in prostorska zahtevnost
+## ⚙️ Časovna in prostorska zahtevnost
 
 - **Časovna zahtevnost:**  
   Biometrična avtentikacija poteka zelo hitro, saj preverjanje identitete izvaja naprava sama. Postopek običajno traja le nekaj milisekund, zato nima opaznega vpliva na delovanje aplikacije.
@@ -50,7 +48,7 @@ Android BiometricPrompt API je na voljo na večini sodobnih Android naprav, ki p
   Uporaba BiometricPrompt API-ja ne zahteva dodatnega prostora za shranjevanje biometričnih podatkov v aplikaciji. Biometrični podatki so varno shranjeni na ravni operacijskega sistema, zato je poraba pomnilnika minimalna.
 
 
-## Vzdrževanje tehnologije
+## 🛠️ Vzdrževanje tehnologije
 
 Android BiometricPrompt API je del knjižnice androidx.biometric, ki jo razvija in vzdržuje podjetje Google kot del Android platforme. Gre za uradno podprto tehnologijo, ki se redno posodablja skupaj z razvojem operacijskega sistema Android.
 
@@ -68,7 +66,7 @@ Android BiometricPrompt API je del knjižnice androidx.biometric, ki jo razvija 
 
 ---
 
-## Lastna uporaba na GitHubu (demo aplikacija)
+## 📱 Lastna uporaba na GitHubu (demo aplikacija)
 Prikazan je preprost demo primer uporabe Android BiometricPrompt API-ja.
 Aplikacija demonstrira osnovno biometrično avtentikacijo uporabnika in obravnavo možnih izjem.
 
@@ -124,9 +122,9 @@ override fun onAuthenticationError(errorCode: Int,errString: CharSequence) {
 
 ```
 
-### Primeri
+### 💭 Primeri
 
-| ![](screenshots/auth_screen.png) | ![](screenshots/auth_success.png) | ![](screenshots/trustedContacts.png)|
-|-----------------------------|---------------------------|----------------------------------|
+| ![](screenshots/auth_screen.png) | ![](screenshots/auth_success.png) | ![](screenshots/auth_canceled.png) |
+|-----------------------------|---------------------------|------------------------------------|
 
 ---
