@@ -1,6 +1,6 @@
 # Android BiometricPrompt
 
-## Zakaj Android BiometricPrompt API?
+## 1. Zakaj Android BiometricPrompt API?
 
 Android BiometricPrompt API je uradna Android knjižnica, ki omogoča varno in enostavno biometrično avtentikacijo uporabnikov. Uporablja lahko prstni odtis, prepoznavo obraza ali druge biometrične metode, ki jih podpira naprava. Ker je del Android SDK-ja, gre za priporočeno in zanesljivo rešitev s strani podjetja Google.
 
@@ -9,9 +9,7 @@ Tehnologija je bila izbrana predvsem zaradi dobre kombinacije varnosti in uporab
 Biometrična avtentikacija je danes zelo razširjena in se pogosto uporablja v aplikacijah, kjer je varnost še posebej pomembna, na primer v bančnih, zdravstvenih ali varnostnih aplikacijah. Zaradi tega je Android BiometricPrompt API primerna izbira tudi za aplikacijo SafeWalk, kjer je cilj zaščita uporabnika in zanesljiva potrditev njegove identitete.
 
 
-## Prednosti in slabosti
-
-### Prednosti
+## Prednosti
 
 - omogoča visoko raven varnosti brez uporabe gesel ali PIN-kod
 - uporabniku prijazen način avtentikacije (hiter in enostaven)
@@ -19,7 +17,7 @@ Biometrična avtentikacija je danes zelo razširjena in se pogosto uporablja v a
 - podpira različne vrste biometrije (prstni odtis, prepoznava obraza, ipd.)
 - aplikacija ne shranjuje biometričnih podatkov, kar poveča varnost
 
-### Slabosti
+## Slabosti
 
 - zahteva napravo z vgrajenim biometričnim senzorjem
 - ni podprt na zelo starih Android napravah
@@ -67,12 +65,12 @@ Android BiometricPrompt API je del knjižnice androidx.biometric, ki jo razvija 
   https://developer.android.com/reference/androidx/biometric
 
 
-## Lastna uporaba na GitHubu (demo aplikacija)
+## 2. Lastna uporaba na GitHubu (demo aplikacija)
 Prikazan je preprost demo primer uporabe Android BiometricPrompt API-ja.
 Aplikacija demonstrira osnovno biometrično avtentikacijo uporabnika in obravnavo možnih izjem.
 
 ### Uporabljena knjižnica
-```
+```kotlin
 implementation("androidx.biometric:biometric:1.1.0")
 ```
 
@@ -80,7 +78,7 @@ implementation("androidx.biometric:biometric:1.1.0")
 Pred zagonom biometrične avtentikacije aplikacija preveri razpoložljivost biometrije na napravi.
 S tem se preprečijo napake na napravah brez ustrezne strojne podpore.
 
-```
+```kotlin
 val biometricManager = BiometricManager.from(this)
 
 when(biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
@@ -94,7 +92,7 @@ when(biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_
 Razred `BiometricPrompt` skrbi za prikaz sistemskega dialoga in obravnavo rezultatov avtentikacije.
 Uporaba sistemskega dialoga povečuje varnost in zagotavlja enotno uporabniško izkušnjo.
 
-```
+```kotlin
 biometricPrompt = BiometricPrompt(
     this,
     executor,
@@ -112,7 +110,7 @@ biometricPrompt = BiometricPrompt(
 
 ### Obravnava izjem
 Aplikacija obravnava tudi možne izjeme, ki se lahko pojavijo pri biometrični avtentikaciji.
-```
+```kotlin
 override fun onAuthenticationError(errorCode: Int,errString: CharSequence) {
     Toast.makeText(
         this@MainActivity,
@@ -122,6 +120,7 @@ override fun onAuthenticationError(errorCode: Int,errString: CharSequence) {
 }
 
 ```
+
 
 ### Primeri
 | ![](screenshots/auth_screen.png) | ![](screenshots/auth_success.png) | ![](screenshots/auth_canceled.png) |
