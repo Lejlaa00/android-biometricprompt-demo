@@ -1,0 +1,1 @@
+# Video predstavitev SafeWalk aplikacije
