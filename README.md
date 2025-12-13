@@ -65,3 +65,63 @@ Android BiometricPrompt API je del knjižnice androidx.biometric, ki jo razvija 
 
 - **Dokumentacija:**  
   https://developer.android.com/reference/androidx/biometric
+
+
+## Lastna uporaba na GitHubu (demo aplikacija)
+Prikazan je preprost demo primer uporabe Android BiometricPrompt API-ja.
+Aplikacija demonstrira osnovno biometrično avtentikacijo uporabnika in obravnavo možnih izjem.
+
+### Uporabljena knjižnica
+```
+implementation("androidx.biometric:biometric:1.1.0")
+```
+
+### Preverjanje podpore za biometrijo
+Pred zagonom biometrične avtentikacije aplikacija preveri razpoložljivost biometrije na napravi.
+S tem se preprečijo napake na napravah brez ustrezne strojne podpore.
+
+```
+val biometricManager = BiometricManager.from(this)
+
+when(biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
+    BiometricManager.BIOMETRIC_SUCCESS -> {
+        biometricPrompt.authenticate(promptInfo)
+    }
+}
+```
+
+### Inicializacija BiometricPrompt
+Razred `BiometricPrompt` skrbi za prikaz sistemskega dialoga in obravnavo rezultatov avtentikacije.
+Uporaba sistemskega dialoga povečuje varnost in zagotavlja enotno uporabniško izkušnjo.
+
+```
+biometricPrompt = BiometricPrompt(
+    this,
+    executor,
+    object : BiometricPrompt.AuthenticationCallback() {
+        override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+            Toast.makeText(
+                this@MainActivity,
+                "Authentication successful",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+)
+```
+
+### Obravnava izjem
+Aplikacija obravnava tudi možne izjeme, ki se lahko pojavijo pri biometrični avtentikaciji.
+```
+override fun onAuthenticationError(errorCode: Int,errString: CharSequence) {
+    Toast.makeText(
+        this@MainActivity,
+        "Authentication error: $errString",
+        Toast.LENGTH_SHORT
+    ).show()
+}
+
+```
+
+### Primeri
+| ![](screenshots/auth_screen.png) | ![](screenshots/auth_success.png) | ![](screenshots/auth_canceled.png) |

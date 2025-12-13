@@ -1,1 +1,0 @@
-# Zaslonski posnetki aplikacije
