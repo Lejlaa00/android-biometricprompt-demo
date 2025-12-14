@@ -128,3 +128,6 @@ override fun onAuthenticationError(errorCode: Int,errString: CharSequence) {
 |-----------------------------|---------------------------|------------------------------------|
 
 ---
+
+## 🎀 SafeWalk Aplikacija
+![SafeWalk demo](video/video.gif)
